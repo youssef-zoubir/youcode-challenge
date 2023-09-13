@@ -18,6 +18,6 @@
 
   sum=a+b+c;
 
-  print("the sum is: %d\n",sum);
+  printf("the sum is: %d\n",sum);
     return 0;
 }
