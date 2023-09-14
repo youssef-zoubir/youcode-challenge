@@ -6,7 +6,8 @@
   int a;
   int b;
   int c;
-  int sum
+  int sum;
+  
   printf("entrer valeur a: ");
   scanf("%d",&a);
 
