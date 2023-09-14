@@ -16,7 +16,7 @@
   printf("entrer valeur c: ");
   scanf("%d",&c);
 
-  sum=a+b+c;
+  sum = a + b + c;
 
   printf("the sum is: %d\n",sum);
     return 0;
