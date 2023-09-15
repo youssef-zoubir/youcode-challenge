@@ -18,11 +18,18 @@ float delta = (b * b) - 4 * a * c;
 
 printf("delta = %f", delta);
 
+if(delta>0)
+printf("deux solutions distinctes .");
+
+if(delta==0)
+printf("unique solution. ");
+
+if(delta<=0)
+printf("pas de solution réelle.");
+
 return 0;
 
 }
-
-
 
 
 
