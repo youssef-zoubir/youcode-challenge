@@ -1,10 +1,10 @@
 #include<stdio.h>
-int n = 20;
+int x , y , 
 int main(){
    
-
+tab[n] 
    printf("saisir la valeur de tableau");
-     T[n] 
+   
    
 
   return 0;
