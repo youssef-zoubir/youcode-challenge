@@ -24,7 +24,7 @@ printf("deux solutions distinctes .");
 if(delta==0)
 printf("unique solution. ");
 
-if(delta<=0)
+if(delta<0)
 printf("pas de solution réelle.");
 
 return 0;

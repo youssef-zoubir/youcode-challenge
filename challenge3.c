@@ -21,6 +21,7 @@ int main(){
    multipe= a*b;
    devision= a/b;
 
+
    printf("la somme est : %d\n",somme);
    printf("less est: %d\n",less);
    printf("multipe est: %d\n",multipe);
