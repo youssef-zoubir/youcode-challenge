@@ -10,7 +10,7 @@ int less(int a,int b)
 {
     return a-b;
 }
-int mult(int a,int b)
+int multiple(int a,int b)
 {
     return a*b;
 }
@@ -18,8 +18,8 @@ int division(int a, int b) {
     if (b != 0) {
         return a / b;
     } else {
-        printf("Erreur : Division par zéro.\n");
-        return 0.0;
+        printf("Erreur .\n");
+        
     }
 }
 int carre(int a) {
@@ -32,7 +32,7 @@ int racinCarree(int a) {
         return sqrt(a);
     } else {
         printf("Erreur\n");
-        return 0.0;
+        
     }
 }
 
@@ -91,8 +91,6 @@ int main()
 	            printf(" racinCarree et :  %d\n", racinCarre);
 	            break; 
 	   } }while (choix != 7);
-
-         printf("Au revoir !\n");
 
          return 0;
 
