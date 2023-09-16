@@ -10,7 +10,8 @@ scanf("%d",number);
 
 for (int i = 0; i < number; i++)
 {
-    printf("%d * %d = %d",number);
+    printf("%d * %d = %d\n",i , number, number*i);
 
-}return 0;
+} 
+        return 0;
 }
