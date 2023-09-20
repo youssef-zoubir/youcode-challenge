@@ -25,14 +25,11 @@ int division(int a, int b) {
 int carre(int a) {
     return a * a;
 }
-
-
 int racinCarree(int a) {
     if (a >= 0) {
         return sqrt(a);
     } else {
         printf("Erreur\n");
-        
     }
 }
 
@@ -51,7 +48,7 @@ int main()
 	    printf("3 =  multiplication\n");
 	    printf("4 =  division\n");
 	    printf("5 =  carre\n");
-	     printf("6 =  raccinCarre\n");
+	    printf("6 =  raccinCarre\n");
 	    printf("7 =  quite\n");
 	    printf("Choisissez un number 1-7 : ");
 	    scanf("%d", &choix);

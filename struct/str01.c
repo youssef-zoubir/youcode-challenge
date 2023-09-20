@@ -4,7 +4,7 @@
   char firstname[30];
   char lastname[30];
   date_de_naissance birth;
-  void (*age)(int);  
+  void (age)(int);  
  };
 
  typedef struct 
@@ -23,7 +23,7 @@ void age(int year)
 
 int main()
 {
-    struct emp emp1 = {"samir", "mkhlofi", {14, 04, 2000}, age};
+    struct emp emp1 = {"youssef", "zoubir", {15, 05, 2005}, age};
     emp1.age(emp1.birth.year);
     return 0;
 }
