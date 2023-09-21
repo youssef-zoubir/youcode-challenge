@@ -1,8 +1,54 @@
 #include<stdio.h>
 #include<stdlib.h>
+   typedef struct projet_sas
+  {
+    int identifian;
+    char titre[20];
+    char description[100];
+    int  deadline;
+    char statut[100];
+  }mag;
+  
+   void ajouterN()
+   {
 
-   void ajouterN,ajouterP,afficher,modifier,supprimer,rechercher,Statistiques;
+    printf("entrer id :");
+    scanf("%d",&identifian);
 
+    printf("entrer titre :");
+    scanf("%d",&titre);
+
+    printf("entrer description :");
+    scanf("%d",&description); 
+
+    printf("entrer deadline :");
+    scanf("%d",&deadline); 
+
+    printf("entrer statut :");
+    scanf("%d",&statut); 
+   }
+
+   void ajouterp(){
+    
+    
+   }
+   void afficher(){
+    
+   }
+   void modifier(){
+    
+   }
+   void suppriner(){
+    
+   }
+    void Rechercher(){
+    
+   }
+    void Statistiques(){
+    
+   }
+    
+    
 
     void menu (){
 
@@ -31,23 +77,23 @@
     break;
 
     case 3:
-   afficher()
+   afficher();
     break;
 
     case 4:
-   modifier()
+   modifier();
     break;
 
     case 5:
-    supprimer()
+    supprimer();
     break;
 
     case 6:
-    rechercher()
+    rechercher();
     break;
 
     case 7:
-    Statistiques()
+    Statistiques();
     break;
   }
    }
@@ -57,16 +103,12 @@
   
    }
 }
-struct p
-{
-    int identifiant;
-    char titre;
-    char description;
-    int deadline;
-    char statut;
-};
+
 
 int main(){
+
+  
+
     menu();
     return 0;
 }

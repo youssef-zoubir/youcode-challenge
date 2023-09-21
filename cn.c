@@ -21,3 +21,39 @@
     case 7:
     printf("Statistiques");
     break;
+    
+
+
+
+
+
+
+
+
+
+
+    typedef struct ajouter
+    {
+        int identifian;
+        char titre[20];
+        char description[20];
+        char statut;
+
+    }ajo_1;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+      ajo_1 k;
+
+    printf("entrer id :");
+    scanf("%d",&identifian);
