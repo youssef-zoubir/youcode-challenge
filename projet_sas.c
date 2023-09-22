@@ -9,7 +9,7 @@
     char description[100];
     int  deadline;
     char statut[100];
-}mag;
+};
     struct mag tache[500];   
     int n ;
  
@@ -166,6 +166,8 @@
     void Statistiques()
     {
      printf( "\n nombres des tache est : %d",n);
+
+    
 
     }
     
