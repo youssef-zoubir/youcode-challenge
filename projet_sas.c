@@ -1,20 +1,29 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-struct mag{
+#include<string.h>
+ struct mag{
     
     int id;
     char titre[20];
     char description[100];
     int  deadline;
     char statut[100];
-};
+}mag;
     struct mag tache[500];   
-    int n;
-    
+    int n ;
+ 
    void ajouterN(){
+
+    printf("###############################################\n");
+    printf("\n");
+
+
     printf("saisir n tache : ");
     scanf("%d", &n); 
+
+   printf("#################################################\n");
+   printf("\n");
 
     for(int i = 0 ; i < n ; i++)
     {
@@ -37,6 +46,10 @@ struct mag{
 
    void afficher()
    {
+    int choix;
+    
+    printf("#################################################\n");
+    printf("\n");
         for(int i = 0 ; i < n ; i++)
         {
         printf(" id :%d\n", tache[i].id);       
@@ -45,7 +58,9 @@ struct mag{
         printf(" deadline: %d\n", tache[i].deadline);
         printf(" statut: %s\n" , tache[i].statut); 
         }
+
    }
+
    void modifier()
    {
     int choix;
@@ -96,17 +111,45 @@ struct mag{
     }
    }
  
-   void suppriner()
+   void supprimer()
    {
-    
+    int suprm;
+    int id;
+
+    printf("entrer id :");
+    scanf("%d",&id);
+     for (int i = 0; i < n; i++)
+     {
+      if (id==tache[i].id)
+      {
+       tache[i]=tache[n-1];
+       printf("la tache est supprimer\n");
+      n--;
+      break;
+      }
+     }
    }
-
-    void Rechercher()
+   void Rechercher()
     {
+        int choix;
         int id;
-        printf("entrer id :");
-        scanf("%d",&id);
+        char titre[20];
+         printf("1=rechercher par id  :\n");
+         printf("2=recherche par titre : \n");
+         printf("choose :");
+         scanf("%d",&choix);
 
+        if (choix == 1)
+        {
+             printf("entrer id :");
+             scanf("%d",&id);
+        }
+        else
+        {
+             printf("entrer titre :");
+             scanf("%s",&titre);
+        }
+       
     for (int i = 0; i < n; i++)
     {
         if (tache[i].id==id)
@@ -122,13 +165,20 @@ struct mag{
 
     void Statistiques()
     {
+     printf( "\n nombres des tache est : %d",n);
 
     }
+    
 
-    void menu (){ 
+  
+
+   void menu (){ 
         
    int choix;
-
+   
+   printf("###########    (((((((WELCOM)))))))))   ###########\n");
+   printf("####################################################\n");
+   printf("###########    (((MENU PRINCIPALE))))   ###########\n");
    do
    {  
     printf("1=Ajouter une nouvelle tache \n");
@@ -144,29 +194,30 @@ struct mag{
   switch (choix)
   {
     case 1:
-   ajouterN();
+      ajouterN();
     break;
 
     case 2:
     break;
 
     case 3:
-   afficher();
+      afficher();
     break;
 
     case 4:
-   modifier();
+      modifier();
     break;
 
     case 5:
-    
+      supprimer();
     break;
 
     case 6:
-   Rechercher();
+      Rechercher();
     break;
 
     case 7:
+      Statistiques();
     break;
   }
    }
