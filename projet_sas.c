@@ -5,10 +5,10 @@
  struct mag{
     
     int id;
-    char titre[20];
-    char description[100];
+    char titre[90];
+    char description[90];
     int  deadline;
-    char statut[100];
+    char statut[90];
 };
     struct mag tache[500];   
     int n ;
@@ -31,16 +31,16 @@
          scanf("%d",&tache[i].id);
 
          printf("entrer titre : ");
-         scanf("%s",&tache[i].titre);
+         scanf(" %90[^\n]",&tache[i].titre);
 
          printf("entrer description :  ");
-         scanf("%s",&tache[i].description); 
+         scanf(" %90[^\n]",&tache[i].description); 
 
          printf("entrer deadline :  ");
          scanf("%d",&tache[i].deadline); 
 
          printf("entrer statut :  ");
-         scanf("%s",&tache[i].statut);       
+         scanf(" %90[^\n]",&tache[i].statut);       
     }
    }
 
@@ -53,10 +53,10 @@
         for(int i = 0 ; i < n ; i++)
         {
         printf(" id :%d\n", tache[i].id);       
-        printf(" titre :%s\n", tache[i].titre);
-        printf(" description : %s\n" , tache[i].description);
+        printf(" titre : %s\n", tache[i].titre);
+        printf(" description :  %s\n" , tache[i].description);
         printf(" deadline: %d\n", tache[i].deadline);
-        printf(" statut: %s\n" , tache[i].statut); 
+        printf(" statut:  %d\n" , tache[i].statut); 
         }
 
    }
@@ -154,42 +154,38 @@
     {
         if (tache[i].id==id)
         {
-        printf(" id :%d\n", tache[i].id);       
+        printf(" id :%d\n", tache[i].id);
         printf(" titre :%s\n", tache[i].titre);
         printf(" description : %s\n" , tache[i].description);
         printf(" deadline: %d\n", tache[i].deadline);
-        printf(" statut: %s\n" , tache[i].statut);   
+        printf(" statut: %s\n" , tache[i].statut);
         }
     }
     }
 
     void Statistiques()
     {
-     printf( "\n nombres des tache est : %d",n);
-
-    
+     printf( "\n nombres total  des tache est : %d",n);
 
     }
     
-
-  
-
    void menu (){ 
-        
+                 
    int choix;
    
    printf("###########    (((((((WELCOM)))))))))   ###########\n");
    printf("####################################################\n");
    printf("###########    (((MENU PRINCIPALE))))   ###########\n");
    do
-   {  
-    printf("1=Ajouter une nouvelle tache \n");
-    printf("2=Ajouter plusieurs nouvelles taches. \n");
-    printf("3=Afficher la liste de toutes les taches \n");
-    printf("4=Modifier une tache \n");
-    printf("5=Supprimer une tache par identifiant. \n");
-    printf("6=Rechercher les Taches \n");
-    printf("7=Statistiques : \n");
+   {
+    printf("\n[1]=Ajouter une nouvelle tache \n");
+    printf("[2]=Ajouter plusieurs nouvelles taches. \n");
+    printf("[3]=Afficher la liste de toutes les taches \n");
+    printf("[4]=Modifier une tache \n");
+    printf("[5]=Supprimer une tache par identifiant. \n");
+    printf("[6]=Rechercher les Taches \n");
+    printf("[7]=Statistiques : \n");
+    printf("\n");
     printf("entrer un choix entre 1-7:");
     scanf("%d",&choix);
 
