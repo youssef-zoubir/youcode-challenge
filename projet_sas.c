@@ -1,15 +1,22 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<time.h>
-#include<string.h>
- struct mag{
+struct Deadline 
+{
+  int day;
+  int month;
+  int year;
+};
+
+
+ typedef struct mag{
     
     int id;
     char titre[90];
     char description[90];
-    int  deadline;
+    struct Deadline deadline;
     char statut[90];
 };
+   
     struct mag tache[500];   
     int n ;
  
@@ -37,11 +44,13 @@
          scanf(" %90[^\n]",&tache[i].description); 
 
          printf("entrer deadline :  ");
-         scanf("%d",&tache[i].deadline); 
+         scanf("%d/%d/%d",&tache[i].deadline.day,&tache[i].deadline.month,&tache[i].deadline.year); 
 
          printf("entrer statut :  ");
          scanf(" %90[^\n]",&tache[i].statut);       
+        
     }
+    
    }
 
    void afficher()
@@ -55,10 +64,11 @@
         printf(" id :%d\n", tache[i].id);       
         printf(" titre : %s\n", tache[i].titre);
         printf(" description :  %s\n" , tache[i].description);
-        printf(" deadline: %d\n", tache[i].deadline);
-        printf(" statut:  %d\n" , tache[i].statut); 
+        printf(" deadline: %d/%d/%d \n",tache[i].deadline.day, tache[i].deadline.month, tache[i].deadline.year);
+        printf(" statut: %s \n" , tache[i].statut); 
+        
         }
-
+     
    }
 
    void modifier()
@@ -69,10 +79,12 @@
     printf("1=description :\n");
     printf("2=statut : \n");
     printf("3=deadline  : \n");
-    printf("choose la modifier :");
+    printf("choose la modifier \n:");
     scanf("%d",&choix);
+   
+      printf("\n°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
 
-     printf("entrer id  ");
+     printf("\nentrer id :\n ");
      scanf("%d",&id);
     switch (choix)
     {
@@ -102,13 +114,14 @@
         if (tache[i].id==id)
         { 
             printf("entrer la nouvelle deadline : ");
-            scanf("%d",tache[i].deadline );
+            scanf("%d/%d/%d",&tache[i].deadline.day,&tache[i].deadline.month,&tache[i].deadline.year );
         }
     }
         break;    
     default:
         break;
     }
+    printf("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
    }
  
    void supprimer()
@@ -128,6 +141,7 @@
       break;
       }
      }
+     printf("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
    }
    void Rechercher()
     {
@@ -138,7 +152,7 @@
          printf("2=recherche par titre : \n");
          printf("choose :");
          scanf("%d",&choix);
-
+   printf("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
         if (choix == 1)
         {
              printf("entrer id :");
@@ -149,7 +163,7 @@
              printf("entrer titre :");
              scanf("%s",&titre);
         }
-       
+       printf("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
     for (int i = 0; i < n; i++)
     {
         if (tache[i].id==id)
@@ -161,6 +175,7 @@
         printf(" statut: %s\n" , tache[i].statut);
         }
     }
+    printf("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
     }
 
     void Statistiques()
@@ -178,11 +193,13 @@
    printf("###########    (((MENU PRINCIPALE))))   ###########\n");
    do
    {
+       printf("###########    (((MENU PRINCIPALE))))   ###########\n");
+    printf("\n");
     printf("\n[1]=Ajouter une nouvelle tache \n");
     printf("[2]=Ajouter plusieurs nouvelles taches. \n");
     printf("[3]=Afficher la liste de toutes les taches \n");
     printf("[4]=Modifier une tache \n");
-    printf("[5]=Supprimer une tache par identifiant. \n");
+    printf("[5]=Supprimer une tache \n");
     printf("[6]=Rechercher les Taches \n");
     printf("[7]=Statistiques : \n");
     printf("\n");
