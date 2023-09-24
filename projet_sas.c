@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 struct Deadline 
 {
   int day;
@@ -52,6 +53,28 @@ struct Deadline
     }
     
    }
+    
+    void trier_par_orde_alpha(struct mag tache[], int tacheCount) {
+    struct mag temp;
+    int swapped;
+
+    do {
+        swapped = 0;
+        for (int i = 0; i < tacheCount - 1; i++)
+         {
+            if (strcmp(tache[i].titre, tache[i + 1].titre) > 0) {
+                
+                temp = tache[i];
+                tache[i] = tache[i + 1];
+                tache[i + 1] = temp;
+                swapped = 1;
+            }
+        }
+    } while (swapped);
+    
+    printf("Tasks sorted alphabetically by title.\n");
+}
+
 
    void afficher()
    {
@@ -213,6 +236,7 @@ struct Deadline
     break;
 
     case 2:
+   
     break;
 
     case 3:
