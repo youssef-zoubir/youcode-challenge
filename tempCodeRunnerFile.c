@@ -1,1 +1,5 @@
-%d/%d/%d
+t Deadline 
+{
+  int day;
+  int month;
+  int year;

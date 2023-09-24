@@ -54,27 +54,68 @@ struct Deadline
     
    }
     
-    void trier_par_orde_alpha(struct mag tache[], int tacheCount) {
-    struct mag temp;
-    int swapped;
+    void trier_par_orde_alpha()
+   {
+      int choix;
 
-    do {
-        swapped = 0;
-        for (int i = 0; i < tacheCount - 1; i++)
-         {
-            if (strcmp(tache[i].titre, tache[i + 1].titre) > 0) {
-                
-                temp = tache[i];
-                tache[i] = tache[i + 1];
-                tache[i + 1] = temp;
-                swapped = 1;
+      printf("\n[1]= Trier les taches par ordre alphabetique.");
+      printf("\n[2]= Trier les taches par deadline. \n");
+      scanf("%d", &choix);
+
+      if( choix == 1)
+      {
+        struct mag temp;
+        for (int i = 0; i < n - 1; i++)
+          {
+                for (int j= i+1; i < n; i++)
+            {
+                  if (strcmp( tache[i].titre,tache[j].titre) > 0)
+            {
+                        temp = tache[i];
+                        tache[i] = tache[j];
+                        tache[j] = temp;
             }
-        }
-    } while (swapped);
-    
-    printf("Tasks sorted alphabetically by title.\n");
-}
+            }
+          }
+        for(int i = 0 ; i < n ; i++)
+      {
+        printf(" id :%d\n", tache[i].id);       
+        printf(" titre :%s\n", tache[i].titre);
+        printf(" description : %s\n" , tache[i].description);
+        printf("deadline :%d/%d/%d",tache[i].deadline.day,tache[i].deadline.month,tache[i].deadline.year);
+        printf(" statut: %s\n" , tache[i].statut); 
+      }
+      }
+      
+      else if (choix == 2)
+      {
+        struct mag temp;
+        for (int i = 0; i < n - 1; i++)
+          {
+                for (int j= i+1; i < n; i++)
+            {
+                  if ( tache[i].deadline.day == tache[j].deadline.day )
+            {
+                        temp = tache[i];
+                        tache[i] = tache[j];
+                        tache[j] = temp;
+            }
+            }
+          }
+        for(int i = 0 ; i < n ; i++)
+      {
+        printf(" id :%d\n", tache[i].id);       
+        printf(" titre :%s\n", tache[i].titre);
+        printf(" description : %s\n" , tache[i].description);
+        printf("deadline : %d/%d/%d",tache[i].deadline.day,tache[i].deadline.month,tache[i].deadline.year);
+        printf(" statut: %s\n" , tache[i].statut); 
+      }
+      }
+      
 
+
+
+    }
 
    void afficher()
    {
@@ -219,7 +260,7 @@ struct Deadline
        printf("###########    (((MENU PRINCIPALE))))   ###########\n");
     printf("\n");
     printf("\n[1]=Ajouter une nouvelle tache \n");
-    printf("[2]=Ajouter plusieurs nouvelles taches. \n");
+    printf("[2]=Trier les taches  \n");
     printf("[3]=Afficher la liste de toutes les taches \n");
     printf("[4]=Modifier une tache \n");
     printf("[5]=Supprimer une tache \n");
@@ -236,7 +277,7 @@ struct Deadline
     break;
 
     case 2:
-   
+      trier_par_orde_alpha();
     break;
 
     case 3:
