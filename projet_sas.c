@@ -25,9 +25,7 @@ struct Deadline
 
     printf("###############################################\n");
     printf("\n");
-
-
-    printf("saisir n tache : ");
+   printf("saisir n tache : ");
     scanf("%d", &n); 
 
    printf("#################################################\n");
@@ -235,7 +233,7 @@ struct Deadline
         }
     }
         }
-   0 0000000000000000000000000000000000000000000000    else
+     else
         {
              printf("entrer titre :");
              scanf("%s",&titre);
